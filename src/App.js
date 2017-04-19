@@ -17,7 +17,10 @@ class App extends React.Component {
     this.todoLists.splice(list, 1);
     this.setState({ todoList: this.todoLists });
   }
-
+  titleOnChange(list, e) {
+    this.todoLists[list].title = e.target.value;
+    this.setState({ todoList: this.todoLists });
+  }
   todoOnClick(list, todo) {
     console.log(list, todo);
     console.log(this.todoLists[list]["todos"][todo].text);
@@ -49,6 +52,7 @@ class App extends React.Component {
         listIndex={index}
         todoAdd={this.todoAdd.bind(this,index)}
         listDelete={this.listDelete.bind(this,index)}
+        titleOnChange={this.titleOnChange}
         todoOnClick={this.todoOnClick}
         todoOnChange={this.todoOnChange}
         todoOnCheck={this.todoOnCheck}
@@ -59,7 +63,7 @@ class App extends React.Component {
     );
     return (
       <div className="App">
-        <button onClick={this.listAdd.bind(this)}>Add</button>
+        <button onClick={this.listAdd.bind(this)}>＋</button>
         {todoLists}
       </div>
     );

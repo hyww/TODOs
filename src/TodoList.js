@@ -7,23 +7,25 @@ const todoList = (props) => {
       <input type="checkbox"
         onChange={props.todoOnCheck.bind(props.app, props.listIndex, index)}
         checked={todo.done}
-      >
-      </input>
+      />
       <input type="text"
-      className={todo.done?'todo-done':''}
-      onClick={props.todoOnClick.bind(props.app, props.listIndex, index)}
-      onChange={props.todoOnChange.bind(props.app, props.listIndex, index)}
-      value={todo.text}
-      >
-      </input>
+        className={todo.done?'todo-done':''}
+        onClick={props.todoOnClick.bind(props.app, props.listIndex, index)}
+        onChange={props.todoOnChange.bind(props.app, props.listIndex, index)}
+        value={todo.text}
+      />
       <button onClick={props.todoDelete.bind(props.app, props.listIndex, index)}>Delete</button>
     </li>
   );
   return (
     <div className="todo-list">
-      <span className="list-title">{list.title}</span>
-      <button onClick={props.todoAdd}>Add</button>
-      <button onClick={props.listDelete}>X</button>
+      <input type="text" 
+        className="list-title"
+        onChange={props.titleOnChange.bind(props.app, props.listIndex)}
+        value={list.title}
+      />
+      <button onClick={props.todoAdd}>＋</button>
+      <button onClick={props.listDelete}>Ｘ</button>
       <ul>
         {todos}
       </ul>
