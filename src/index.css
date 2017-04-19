@@ -6,14 +6,52 @@ body {
 
 button {
   display: inline-block;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  margin: 1px;
 }
 ul {
   list-style-type: none;
 }
+
+input[type=text] {
+  width: 70%;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+li > input[type=text] {
+  width: 80%!important;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.header {
+  width: 100%;
+  margin: 10px;
+}
+.header > span {
+  font-size: xx-large;
+  margin: 2px;
+}
 .todo-list {
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  min-height: 250px;
+  width: 250px;
+  margin: 10px;
+  padding: 15px 10px 5px 15px;
+  justify-content: flex-start;
 }
 .list-title {
-  font-size: xx-large;
+  font-size: large;
+}
+.todo {
+  margin: 5px 5px 5px 0px;
 }
 .todo-done {
   text-decoration: line-through;
